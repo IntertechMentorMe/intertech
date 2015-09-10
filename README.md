@@ -107,7 +107,7 @@ If someone changed the same files you did, then an error will be displayed or wh
 
 **REMEMBER** if you do need to merge by hand, be sure to check that the website still works by running the commands listed in "Getting the Latest Code".
 
-Once you've run these steps you can view the website live at http://104.155.45.250/ (it might take a few moments for the changes to go live).
+<!-- Once you've run these steps you can view the website live at http://104.155.45.250/ (it might take a few moments for the changes to go live). -->
 
 Getting the Latest Code
 -----------------------
@@ -134,3 +134,14 @@ If you add a bower or npm component be sure to use the format:
     bower install --save COMPONENT
 
 Otherwise, without saving, when you push your changes the components will not be pushed with it and the website will only work on your computer.
+
+Restarting Staging Server
+----------------------------
+
+Until web hooks are enabled in the github repository, you need to manually run a command on the staging server in order to see changes there.
+
+ 1. Login to the cloud control panel
+ 2. Click SSH
+ 3. cd /home/theollidude
+ 4. ./pullAndRun.sh
+ 5. Exit SSH session (server keeps running)
