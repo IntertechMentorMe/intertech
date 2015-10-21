@@ -10,8 +10,9 @@
 				<meta name="description" content="">
 				<meta name="viewport" content="width=device-width, initial-scale=1">
 				<link rel="apple-touch-icon" href="apple-touch-icon.png">
-				<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
-				<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+				<!-- link to Bootstrap 4.0.0 -->
+				<link rel="stylesheet" href="/bower_components/bootstrap-4.0.0-alpha/dist/css/bootstrap.min.css">
+				<link rel="stylesheet" href="/bower_components/bootstrap-4.0.0-alpha/dist/css/bootstrap-theme.min.css">
 				<link rel="stylesheet" href="/stylesheets/style.css">
 				 <style>
 						body {
@@ -44,12 +45,12 @@
 
 		<!-- Info -->
 		<div class="jumbotron" id="info">
-			<div class="container-fluid">
+			<div class="container">
 				<div class="lead">Mentors page </div>
-
-				<div class="mentorCards"></div>
-
-
+				
+					<div class="row">
+						<div class="mentorCards"></div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -70,6 +71,7 @@
 		</div> <!-- /container -->
 			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 				<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+			<script src="/bower_components/bootstrap-4.0.0-alpha/dist/js/bootstrap.min.js"></script>
 			<script src="/js/mentors_js.js"></script>
 				<!--
 				<script src="js/vendor/bootstrap.min.js"></script>
