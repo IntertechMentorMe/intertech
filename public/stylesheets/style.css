@@ -1,1 +1,23 @@
-#info{background:#fff;margin:6em 0;text-align:center}#blog{background:#eee}#loginSignup,footer{text-align:center;margin:6em 0}.lead{font-size:200%;padding-bottom:4em}
+#info{
+	background:#fff;
+	margin:6em 0;
+	text-align:center
+	}
+
+#blog{
+	background:#eee
+	}
+
+#menteesignin, #mentorsignin, footer{
+	text-align:center;
+	margin:6em 0
+	}
+
+#menteesignin, #mentorsignin{
+	padding-top: 10em;
+}
+
+.lead{
+	font-size:200%;
+	padding-bottom:4em
+}
