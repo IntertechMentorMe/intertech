@@ -9,6 +9,7 @@ var robots = require("express-robots");
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var user = require('./routes/user');
+var mentors = require('./routes/mentors');
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.use(robots({UserAgent: '*', Disallow: '/'}))
 app.use('/', routes);
 app.use('/users', users);
 app.use('/user', user);
+app.use('/mentors', mentors);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
