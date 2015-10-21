@@ -49,7 +49,7 @@ function mentorsDisplay() {
 				mentorCards += "<div class='card mentorCard col-sm-6 col-md-4 col-md-offset-1' style='background-color: #edebe8; border-color: #c0c0c0;'> <br> <img class='card-img-top mentorPhoto' src='http://lorempixel.com/318/180/people' alt='Mentor Image'> <div class='card-block'> <h4 class='card-title mentorName'> " + mentor.first_name + " " + mentor.last_name + "</h4> <p class='card-text mentorHeadline'> " + mentor.headline + " </p> <a href='/mentor/" + mentor.user_id + "' class='btn btn-primary'>View profile</a> </div> </div> "
 			});
 
-			console.log(mentorCards);		
+			// Note we may have a problem with the photo url and some code change may be required. The data-src instruction didn't work.
 
 		$("div.mentorCards").html( mentorCards );
 		};
