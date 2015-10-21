@@ -22,7 +22,7 @@ function mentorsDisplay() {
 		// Provisionnaly using an array of data
 
 		var mentors = [
-				{user_id: 45566, first_name: "Paul", last_name: "Stanford", email_address: "paul.stanford@gmail.com", photo: "photo1", headline: "I am an expert in People", profile: "I am Paul from London and I love helping others finding their way through this difficult life."},
+				{user_id: 45566, first_name: "Paul", last_name: "Stanford", email_address: "paul.stanford@gmail.com", photo: "http&#58&#47&#47lorempixel.com&#47318&#47180&#47people", headline: "I am an expert in People", profile: "I am Paul from London and I love helping others finding their way through this difficult life."},
 				{user_id: 45567, first_name: "Chris", last_name: "Cranleigh", email_address: "chris.cranleigh@gmail.com", photo: "photo2", headline: "I love helping you!", profile: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. ."},
 				{user_id: 45568, first_name: "Heidi", last_name: "Stevens", email_address: "heidi.stevens@gmail.com", photo: "photo3", headline: "I am the right choice...", profile: "Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancy."},
 				{user_id: 45569, first_name: "Jay", last_name: "Root", email_address: "jay.root@gmail.com", photo: "photo4", headline: "Dont trust me", profile: "Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."},
@@ -46,7 +46,7 @@ function mentorsDisplay() {
 		} else {
 
 			$.each( mentors, function( key, mentor ) {
-				mentorCards += "<div class='card mentorCard'> <img class='card-img-top mentorPhoto' data-src='" + mentor.photo + "' alt='Mentor Image'> <div class='card-block'> <h4 class='card-title mentorName'> " + mentor.first_name + " " + mentor.last_name + "</h4> <p class='card-text mentorHeadline'> " + mentor.headline + " </p> <a href='/mentor/" + mentor.user_id + "' class='btn btn-primary'>View profile</a> </div> </div> "
+				mentorCards += "<div class='card mentorCard col-sm-6 col-md-4 col-md-offset-1' style='background-color: #edebe8; border-color: #c0c0c0;'> <br> <img class='card-img-top mentorPhoto' src='http://lorempixel.com/318/180/people' alt='Mentor Image'> <div class='card-block'> <h4 class='card-title mentorName'> " + mentor.first_name + " " + mentor.last_name + "</h4> <p class='card-text mentorHeadline'> " + mentor.headline + " </p> <a href='/mentor/" + mentor.user_id + "' class='btn btn-primary'>View profile</a> </div> </div> "
 			});
 
 			console.log(mentorCards);		
