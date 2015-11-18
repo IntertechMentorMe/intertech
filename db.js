@@ -3,7 +3,7 @@ var db = require("mysql-promise")();
 db.configure({
   host: "173.194.242.252",
   user: "root",
-  pass: "bwhfgebd98654hdbfjc",
+  password: "bwhfgebd98654hdbfjc",
   database: "staging"
 });
 
