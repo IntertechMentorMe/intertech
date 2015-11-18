@@ -1,23 +1,18 @@
-#info{
-	background:#fff;
-	margin:6em 0;
-	text-align:center
-	}
-
-#blog{
-	background:#eee
-	}
-
-#menteesignin, #mentorsignin, footer{
-	text-align:center;
-	margin:6em 0
-	}
-
-#menteesignin, #mentorsignin{
-	padding-top: 10em;
+/* variables */
+#info {
+  background: #ffffff;
+  margin: 6em 0;
+  text-align: center;
 }
-
-.lead{
-	font-size:200%;
-	padding-bottom:4em
+#blog {
+  background: #eeeeee;
+}
+#loginSignup,
+footer {
+  text-align: center;
+  margin: 6em 0;
+}
+.lead {
+  font-size: 200%;
+  padding-bottom: 4em;
 }
