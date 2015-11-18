@@ -1,6 +1,11 @@
 body {
 	background-color:#f3f3f3;
+	padding-top: 0px !important;
 }
+.navbar {
+	height: 200px;
+}
+
 .container {
 	background-color:#ffffff;
 	max-width: 1080px;
