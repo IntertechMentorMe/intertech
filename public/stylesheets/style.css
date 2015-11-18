@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* variables */
 #info {
   background: #ffffff;
@@ -15,4 +16,27 @@ footer {
 .lead {
   font-size: 200%;
   padding-bottom: 4em;
+=======
+#logo{
+
+}
+
+#info{
+	background:#fff;
+	margin:6em 0;
+	text-align:center
+	}
+
+#blog{
+	background:#eee
+	}
+
+#menteesignin, #mentorsignin, footer{
+	text-align:center;
+	margin:6em 0
+	}
+
+#menteesignin, #mentorsignin{
+	padding-top: 10em;
+>>>>>>> f9e48ce9d206af5ac12efe04a21dd9f730de494e
 }
