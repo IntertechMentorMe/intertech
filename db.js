@@ -37,13 +37,14 @@ function insertUser(user) {
   return db.query(statement);
 }
 
-function listMentors(user) {
+function listMentors() {
   var statement = squel.select()
   .from('users')
   .where('isMentor', true)
   .toString()
 
-  return db.query(statement);
+  return db.query(statement)
+  .then(mentors => mentors[0]);
 }
 
 function createUsers() {
@@ -71,6 +72,6 @@ module.exports = {
     getById: getUserById,
     insert: insertUser,
     update: updateUser,
-    list: listMentors
+    listMentors: listMentors
   }
 };
