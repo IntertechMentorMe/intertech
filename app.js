@@ -5,9 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var robots = require("express-robots");
+var session = require('express-session');
+var passport = require('passport');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var auth = require('./routes/auth');
 var user = require('./routes/user');
 var mentors = require('./routes/mentors');
 var template = require('./routes/template');
@@ -28,11 +30,37 @@ app.use(cookieParser());
 app.use("/", express.static(path.join(__dirname+"/public")));
 app.use("/bower_components", express.static(path.join(__dirname+"/bower_components")));
 
+//TODO: Introduce the right kind of session store
+
+var sess = {
+    secret: 'mentormesecret',
+    resave: false,
+    cookie: {
+        //maxAge: timeInMillis
+    }
+};
+
+if (app.get('env') === 'production') {
+    app.set('trust proxy', 1);
+    sess.cookie.secure = true;
+}
+
+app.use(session(sess));
+app.use(passport.initialize());
+app.use(passport.session());
+
 // DONT LET SEARCH ENGINES INDEX TILL LAUNCH:
-app.use(robots({UserAgent: '*', Disallow: '/'}))
+app.use(robots({UserAgent: '*', Disallow: '/'}));
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/auth', auth);
+
+app.use('*', function(req, res, next) {
+    if (req.isAuthenticated())
+        return next();
+    else
+        res.redirect('/');
+});
 app.use('/user', user);
 app.use('/mentors', mentors);
 app.use('/template', template);
