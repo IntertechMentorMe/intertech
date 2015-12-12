@@ -48,35 +48,35 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <img class="img-responsive" src="http://placehold.it/300x300.jpg" alt="User Profile">
+                <img class="profile-image" src="{{photo}}" alt="User Profile">
             </div>
             <div class="col-md-9">
-                <h1>John Doe</h1>
-                <h2>Designer at Agency Ltd.</h2>
+                <h1>{{firstName}}  {{lastName}}</h1>
+                <h2>{{headline}}</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                    {{summary}}
                 </p>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-md-6">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                </p>
-            </div>
-            <div class="col-md-6">
-                <ul>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Lorem ipsum dolor sit amet</li>
-                </ul>
-            </div>
+            <!--<div class="col-md-6">-->
+                <!--<p>-->
+                    <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex-->
+                <!--</p>-->
+                <!--<p>-->
+                    <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex-->
+                <!--</p>-->
+            <!--</div>-->
+            <!--<div class="col-md-6">-->
+                <!--<ul>-->
+                    <!--<li>Lorem ipsum dolor sit amet</li>-->
+                    <!--<li>Lorem ipsum dolor sit amet</li>-->
+                    <!--<li>Lorem ipsum dolor sit amet</li>-->
+                    <!--<li>Lorem ipsum dolor sit amet</li>-->
+                    <!--<li>Lorem ipsum dolor sit amet</li>-->
+                <!--</ul>-->
+            <!--</div>-->
         </div>
 
         <div class="row">
@@ -84,7 +84,7 @@
                 <form class="">
                     <div class="form-group">
                         <label class="sr-only" for="apply">Application</label>
-                        <textarea rows="10" cols="" class="form-control" id="apply" placeholder="Introduce yourself to John"></textarea>
+                        <textarea rows="10" cols="" class="form-control" id="apply" placeholder="Introduce yourself to {{firstName}}"></textarea>
                     </div>
                     <button type="submit" class="btn btn-default">Apply</button>
                 </form>
@@ -94,7 +94,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="alert alert-success" role="alert">
-                    Congratulations, your application has been sent to John.
+                    Congratulations, your application has been sent to {{firstName}}.
                 </div>
             </div>
         </div>

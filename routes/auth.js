@@ -7,18 +7,19 @@ var LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
 passport.use(new LinkedInStrategy({
     clientID: "77xlox75336hph",
     clientSecret: "ZhS2IlMJ5YVS1OGk",
-    callbackURL: "http://127.0.0.1:3000/auth/linkedin/callback",
+    callbackURL: "http://7b55c0cf.ngrok.io/auth/linkedin/callback",
     scope: ['r_emailaddress', 'r_basicprofile'],
     state: true,
     passReqToCallback: true
 }, function(req, accessToken, refreshToken, profile, done) {
     var user = {
       id: profile._json.id,
-      first_name: profile._json.firstName,
-      last_name: profile._json.lastName,
-      summary: profile._json.summary || profile._json.headline,
-      email: profile._json.emailAddress,
-      photo: profile._json.pictureUrl,
+      first_name: fixedEncodeURIComponent(profile._json.firstName),
+      last_name: fixedEncodeURIComponent(profile._json.lastName),
+      headline: fixedEncodeURIComponent(profile._json.headline),
+      summary: fixedEncodeURIComponent(profile._json.summary),
+      email: fixedEncodeURIComponent(profile._json.emailAddress),
+      photo: fixedEncodeURIComponent(profile._json.pictureUrls.values[0]),
     };
 
     if (req.session.isMentor)
@@ -32,6 +33,16 @@ passport.use(new LinkedInStrategy({
     })
     .then(() => done(null, user))
 }));
+
+function fixedEncodeURIComponent (str) {
+    if (str) {
+        return str.replace(/[']/g, function (c) {
+            return '';
+        });
+    } else {
+        return undefined;
+    }
+}
 
 passport.serializeUser(function(user, done) {
     done(null, user);

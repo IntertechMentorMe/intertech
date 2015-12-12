@@ -19,7 +19,7 @@ function getUserById(id) {
 function updateUser(user) {
   var _user = JSON.parse(JSON.stringify(user));
   delete _user.id;
-  var statement = squel.update()
+  var statement = squel.update({replaceSingleQuotes: true})
   .table('users')
   .setFields(_user)
   .where('id', user.id)
@@ -33,6 +33,7 @@ function insertUser(user) {
   .into('users')
   .setFields(user)
   .toString()
+  console.log("FOOOFY", statement);
 
   return db.query(statement);
 }
@@ -53,6 +54,7 @@ function createUsers() {
       "id VARCHAR(10) PRIMARY KEY,",
       "first_name VARCHAR(255),",
       "last_name VARCHAR(255),",
+      "headline VARCHAR(255),",
       "summary TEXT,",
       "email VARCHAR(255),",
       "photo VARCHAR(255),",

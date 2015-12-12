@@ -12,6 +12,7 @@
     "debug": "~2.0.0",
     "ejs": "^2.3.4",
     "express": "~4.9.0",
+    "express-handlebars": "^2.0.1",
     "express-robots": "^0.1.5",
     "express-session": "^1.12.1",
     "jade": "~1.6.0",
