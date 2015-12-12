@@ -31,11 +31,11 @@ passport.use(new LinkedInStrategy({
 }));
 
 passport.serializeUser(function(user, done) {
-    done(null, user.id);
+    done(null, user);
 });
 
-passport.deserializeUser(function(id, done) {
-    return db.Users.getById(id)
+passport.deserializeUser(function(user, done) {
+    return db.Users.getById(user.id)
     .then(user => done(null, user))
 });
 

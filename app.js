@@ -57,7 +57,7 @@ app.use('/auth', auth);
 
 app.use('*', function(req, res, next) {
     if (req.isAuthenticated()){
-        //console.log(req.session)
+        // console.log(req.session)
         return next();
     }
     else {
