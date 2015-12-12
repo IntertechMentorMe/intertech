@@ -10,7 +10,7 @@ passport.use(new LinkedInStrategy({
     callbackURL: "http://127.0.0.1:3000/auth/linkedin/callback",
     scope: ['r_emailaddress', 'r_basicprofile'],
     state: true
-}, function(req, accessToken, refreshToken, profile, done) {
+}, function(accessToken, refreshToken, profile, done) {
     //TODO: Store the access token and refresh token
     console.log(req.path);
     return done(null, profile);
