@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var db = require('../db.js')
 
 var passport = require('passport');
 var LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
@@ -11,12 +12,25 @@ passport.use(new LinkedInStrategy({
     scope: ['r_emailaddress', 'r_basicprofile'],
     state: true
 }, function(accessToken, refreshToken, profile, done) {
+    var user = {
+      id: profile._json.id,
+      first_name: profile._json.firstName,
+      last_name: profile._json.lastName,
+      summary: profile._json.summary || profile._json.headline,
+      email: profile._json.emailAddress,
+      photo: profile._json.pictureUrl,
+      isMentor: null
+    };
     //TODO: Store the access token and refresh token
-    console.log(req.path);
-    return done(null, profile);
+    return db.Users.getById(profile._json.id)
+    .then(profile => {
+        if (!profile) return db.Users.insert(user);
+        else db.Users.update(user);
+    });
 }));
 
 passport.serializeUser(function(user, done) {
+    db.User.getById(user.id)
     done(null, user.id);
 });
 
