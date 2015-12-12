@@ -19,6 +19,8 @@ when and where this meeting takes place.
 
 Our Trello board is over at https://trello.com/b/lV4GOkAP/intertech-do-mentoring.
 
+Our staging server is over at http://104.155.45.250/
+
 Getting Started
 ---------------
 
