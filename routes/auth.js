@@ -1,7 +1,4 @@
-var express = require('express');
-var router = express.Router();
 var db = require('../db.js')
-
 var passport = require('passport');
 var LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
 
@@ -43,16 +40,16 @@ passport.deserializeUser(function(user, done) {
     .then(user => done(null, user))
 });
 
-router.get('/login',
-    passport.authenticate('linkedin'),
-    function(req, res){
-        // The request will be redirected to LinkedIn for authentication, so this
-        // function will not be called.
-    });
+module.exports = function(router) {
+  router.get('/auth/login',
+      passport.authenticate('linkedin'),
+      function(req, res){
+          // The request will be redirected to LinkedIn for authentication, so this
+          // function will not be called.
+      });
 
-router.get('/linkedin/callback', passport.authenticate('linkedin', {
-    successRedirect: '/user',
-    failureRedirect: '/'
-}));
-
-module.exports = router;
+  router.get('/auth/linkedin/callback', passport.authenticate('linkedin', {
+      successRedirect: '/user',
+      failureRedirect: '/'
+  }));
+};

@@ -1,23 +1,24 @@
-var express = require('express');
-var router = express.Router();
+var mountPoint = "/";
+var controller = function(req, res) {
+  var hidden = req.query.action=="signup"? "" : "hidden";
+  res.render("index", {showTerms: hidden, end: req.query.end});
+};
 
-/* GET home page. */
-router.get('/', function(req, res) {
-  res.render('index');
-});
+module.exports = function(router) {
+  router.get(mountPoint, controller);
 
-router.get('/mentor', function(req, res) {
-  var session = req.session;
-  session.isMentor = true;
-  req.session.save();
-  res.redirect('/auth/login');
-});
+  router.get('/mentor', function(req, res) {
+    var session = req.session;
+    session.isMentor = true;
+    req.session.save();
+    res.redirect('/auth/login');
+  });
 
-router.get('/mentee', function(req, res) {
-  var session = req.session;
-  session.isMentor = false;
-  req.session.save();
-  res.redirect('/auth/login');
-});
+  router.get('/mentee', function(req, res) {
+    var session = req.session;
+    session.isMentor = false;
+    req.session.save();
+    res.redirect('/auth/login');
+  });
 
-module.exports = router;
+};

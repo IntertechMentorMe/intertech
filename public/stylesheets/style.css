@@ -1,24 +1,132 @@
-#info{
-	background:#fff;
-	margin:6em 0;
-	text-align:center
-	}
-
-#blog{
-	background:#eee
-	}
-
-#menteesignin, #mentorsignin, footer{
-	text-align:center;
-	margin:6em 0
-	}
-
-#menteesignin, #mentorsignin{
-	padding-top: 10em;
+.navbar-offset {
+	padding-top: 35px;
+	height: 50px;
+	font-weight: 600;
+	color: black;
 }
 
-.footer_item {
-  list-style: none;
-  display: inline;
-  margin: 10px 0 10px 40px;
+.logo {
+	height: 85px;
+}
+
+body {
+	padding-top: 75px;
+	font-family: 'Raleway', sans-serif;
+	color: #333;
+	background-color: #fefefe;
+}
+
+.navbar-offset li {
+	padding-left: 20px;
+}
+
+.navbar a:link, .navbar a:visited, .navbar a:active {
+	color:black;
+	font-weight: 600;
+}
+
+.jumbo-header {
+	padding-top: 120px;
+	padding-bottom: 205px;
+}
+
+.jumbo-header h1 {
+	color: black;
+	font-size: 40px;
+	margin-bottom: 5px;
+	font-weight: 600;
+}
+
+.jumbo-header h2 {
+	color: #320c6f;
+	font-size: 40px;
+	margin-top: 0px;
+	font-weight: 600;
+	line-height: 45px;
+}
+
+h2 {
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.mentor-box {
+	background-color: rgb(240, 225, 256);
+	padding-top: 175px;
+	padding-bottom: 175px;
+}
+
+.mentee-box {
+	background-color: rgb(216, 216, 216);
+	padding-top: 175px;
+	padding-bottom: 175px;
+}
+
+.register-button {
+	background-color: rgb(179, 86, 146);
+	padding: 30px;
+	color: #fefefe;
+	width: 150px;
+	font-size: 20px;
+	text-align: center;
+	margin: 50px;
+	display: inline-block;
+}
+
+.register-button a:link, .register-button a:visited, .register-button a:active {
+	color:#fefefe;
+	text-decoration: none;
+	border-radius: 2px;
+}
+
+.jumbo-about {
+	padding-top: 120px;
+	padding-bottom: 205px;
+	font-size: 20px;
+}
+
+.jumbo-about h2 {
+	margin-bottom: 120px;
+}
+
+footer {
+	background-color: rgb(61, 0, 114);
+	color: #fefefe;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.login-button {
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+
+.TCoverlay {
+	background-color: rgba(0,0,0,0.5);
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+.TCmodal {
+	background-color: #fefefe;
+	border-radius: 5px;
+	margin-top: 10%;
+	width: 50%;
+	margin-left: 25%;
+	height: 60%;
+	padding:30px;
+}
+
+.TCinfo {
+	height: 70%;
+	overflow-y: scroll;
+}
+
+.hidden {
+	display:none;
 }

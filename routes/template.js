@@ -1,9 +1,8 @@
-var express = require('express');
-var router = express.Router();
+var mountPoint = "/template";
+var controller = function(req, res) {
+    res.render("template", {});
+};
 
-/* GET mentors page. */
-router.get('/', function(req, res) {
-  res.render('template');
-}); 
-
-module.exports = router;
+module.exports = function(router) {
+  router.use(mountPoint, controller);
+};
