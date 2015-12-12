@@ -51,13 +51,17 @@ h2 {
 }
 
 .mentor-box {
-	background-color: rgb(240, 225, 256);
+	background-image: url('/images/mentor.jpg');
+	background-size: cover;
+	/*background-color: rgb(240, 225, 256);*/
 	padding-top: 175px;
 	padding-bottom: 175px;
 }
 
 .mentee-box {
-	background-color: rgb(216, 216, 216);
+	background-image: url('/images/mentee.jpg');
+	background-size: cover;
+	/*background-color: rgb(216, 216, 216);*/
 	padding-top: 175px;
 	padding-bottom: 175px;
 }
