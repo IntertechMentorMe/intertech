@@ -10,8 +10,9 @@ passport.use(new LinkedInStrategy({
     clientSecret: "ZhS2IlMJ5YVS1OGk",
     callbackURL: "http://127.0.0.1:3000/auth/linkedin/callback",
     scope: ['r_emailaddress', 'r_basicprofile'],
-    state: true
-}, function(accessToken, refreshToken, profile, done) {
+    state: true,
+    passReqToCallback: true
+}, function(req, accessToken, refreshToken, profile, done) {
     var user = {
       id: profile._json.id,
       first_name: profile._json.firstName,
@@ -19,8 +20,11 @@ passport.use(new LinkedInStrategy({
       summary: profile._json.summary || profile._json.headline,
       email: profile._json.emailAddress,
       photo: profile._json.pictureUrl,
-      isMentor: null
     };
+
+    if (req.session.isMentor)
+        user['isMentor'] = req.session.isMentor;
+
     //TODO: Store the access token and refresh token
     return db.Users.getById(profile._json.id)
     .then(profile => {
