@@ -17,9 +17,12 @@ function getUserById(id) {
 }
 
 function updateUser(user) {
+  var _user = JSON.parse(JSON.stringify(user));
+  delete _user.id;
   var statement = squel.update()
   .table('users')
-  .setFields(user)
+  .setFields(_user)
+  .where('id', user.id)
   .toString()
 
   return db.query(statement);

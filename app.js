@@ -56,10 +56,13 @@ app.use('/', routes);
 app.use('/auth', auth);
 
 app.use('*', function(req, res, next) {
-    if (req.isAuthenticated())
+    if (req.isAuthenticated()){
+        //console.log(req.session)
         return next();
-    else
+    }
+    else {
         res.redirect('/');
+    }
 });
 app.use('/user', user);
 app.use('/mentors', mentors);

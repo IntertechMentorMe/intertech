@@ -26,16 +26,17 @@ passport.use(new LinkedInStrategy({
     .then(profile => {
         if (!profile) return db.Users.insert(user);
         else db.Users.update(user);
-    });
+    })
+    .then(() => done(null, user))
 }));
 
 passport.serializeUser(function(user, done) {
-    db.User.getById(user.id)
     done(null, user.id);
 });
 
 passport.deserializeUser(function(id, done) {
-    done(null, {id: id});
+    return db.Users.getById(id)
+    .then(user => done(null, user))
 });
 
 router.get('/login',
