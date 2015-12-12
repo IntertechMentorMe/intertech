@@ -8,18 +8,14 @@ var controller = function(req, res) {
 
 router.get('/', controller);
 
-router.get('/mentor', function(req, res) {
-  var session = req.session;
-  session.isMentor = true;
-  req.session.save();
-  res.redirect('/auth/login');
-});
-
-router.get('/mentee', function(req, res) {
-  var session = req.session;
-  session.isMentor = false;
-  req.session.save();
-  res.redirect('/auth/login');
+res.render('user', {
+  helpers: {
+    firstName: function() { return passport.first_name; },
+    lastName: function() { return passport.last_name; },
+    headline: function() { return passport.headline; },
+    summary: function() { return passport.summary; },
+    photo: function() { return passport.photo; }
+  }
 });
 
 module.exports = router;

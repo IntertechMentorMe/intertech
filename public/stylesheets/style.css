@@ -130,3 +130,13 @@ footer {
 .hidden {
 	display:none;
 }
+
+.mentorPhoto {
+	width: 180px;
+	height: 180px;
+}
+
+.profile-image {
+	width: 300px;
+	height: 300px;
+}
