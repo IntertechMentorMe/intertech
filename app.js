@@ -15,6 +15,11 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
+var routes = require('./routes/index');
+var auth = require('./routes/auth');
+var user = require('./routes/user');
+var mentors = require('./routes/mentors');
+var template = require('./routes/template');
 app.engine('html',mustacheExpress());
 
 // uncomment after placing your favicon in /public
@@ -48,19 +53,21 @@ app.use(passport.session());
 // DONT LET SEARCH ENGINES INDEX TILL LAUNCH:
 app.use(robots({UserAgent: '*', Disallow: '/'}));
 
-// app.use('*', function(req, res, next) {
-//     if (req.isAuthenticated()){
-//         // console.log(req.session)
-//         return next();
-//     }
-//     else {
-//         res.redirect('/');
-//     }
-// });
+app.use('/', routes);
+app.use('/auth', auth);
+app.use('*', function(req, res, next) {
+     if (req.isAuthenticated()){
+         // console.log(req.session)
+         return next();
+     }
+     else {
+         res.redirect('/');
+     }
+ });
+app.use('/user', user);
+app.use('/mentors', mentors);
+app.use('/template', template);
 
-fs.readdirSync("routes/").forEach(function(route) {
-  require("./routes/" + route)(app);
-});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
