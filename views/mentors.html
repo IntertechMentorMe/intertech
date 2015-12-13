@@ -11,19 +11,20 @@
 	<!-- Info -->
 	<div class="jumbotron" id="info">
 		<div class="container">
-			<div class="lead">Mentors page </div>
+			<div class="lead">Mentors directory</div>
 				<div class="row">
 					<!--<div class="mentorCards"></div>-->
           {{#each mentors}}
-              <div class='card mentorCard col-sm-6 col-md-4 col-md-offset-1' style='background-color: #edebe8; border-color: #c0c0c0;'>
-                  <br>
-                  <img class='card-img-top mentorPhoto' src='{{photo}}' alt='Mentor Image'>
+						<div class="col-sm-6 col-md-4">
+              <div class='card'>
+                  <img src="{{photo}}" class="card-img-top img-responsive mentorPhoto">
                   <div class='card-block'>
                       <h4 class='card-title mentorName'>{{first_name}} {{last_name}}</h4>
                       <p class='card-text mentorHeadline'>{{headline}}</p>
-                      <a href='/mentors/profile?id={{id}}' class='btn btn-primary'>View profile</a>
+                      <a href='/mentors/{{id}}/{{first_name}}_{{last_name}}' class='btn btn-primary'>View profile</a>
                   </div>
               </div>
+						</div>
           {{/each}}
 				</div>
 			</div>

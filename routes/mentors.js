@@ -9,9 +9,10 @@ router.get('/', function(req, res) {
   });
 });
 
-router.get('/profile', function(req, res) {
-  db.Users.getById(req.query.id).then(passport => {
-    res.render('user', {
+router.use('/:user/:name', function(req, res) {
+  db.Users.getById(req.params.user).then(passport => {
+    res.render('profile', {
+        sent: req.method != "GET",
         helpers: {
           firstName: function() { return passport.first_name; },
           lastName: function() { return passport.last_name; },

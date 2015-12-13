@@ -51,17 +51,17 @@ h2 {
 }
 
 .mentor-box {
-	background-image: url('/images/mentor.jpg');
-	background-size: cover;
-	/*background-color: rgb(240, 225, 256);*/
+	/*background-image: url('/images/mentor.jpg');
+	background-size: cover;*/
+	background-color: rgba(230, 124, 134, 0.5);
 	padding-top: 175px;
 	padding-bottom: 175px;
 }
 
 .mentee-box {
-	background-image: url('/images/mentee.jpg');
-	background-size: cover;
-	/*background-color: rgb(216, 216, 216);*/
+	/*background-image: url('/images/mentee.jpg');
+	background-size: cover;*/
+	background-color: rgba(190, 131, 205, 0.5);
 	padding-top: 175px;
 	padding-bottom: 175px;
 }
@@ -136,6 +136,14 @@ footer {
 }
 
 .mentorPhoto {
-	width: 180px;
-	height: 180px;
+	width: 100%;
+}
+
+.contactBox {
+	margin-bottom: 50px;
+}
+
+.space {
+	margin-top: 100px;
+	margin-bottom: 100px;
 }

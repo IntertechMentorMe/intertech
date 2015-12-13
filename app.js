@@ -25,8 +25,7 @@ var routes = require('./routes/index');
 var auth = require('./routes/auth');
 var user = require('./routes/user');
 var mentors = require('./routes/mentors');
-var template = require('./routes/template');
-
+var faq = require('./routes/faq');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -34,8 +33,6 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use("/", express.static(path.join(__dirname+"/public")));
-app.use("/bower_components", express.static(path.join(__dirname+"/bower_components")));
 
 //TODO: Introduce the right kind of session store
 
@@ -60,7 +57,10 @@ app.use(passport.session());
 app.use(robots({UserAgent: '*', Disallow: '/'}));
 
 app.use('/', routes);
+app.use('/faq', faq);
 app.use('/auth', auth);
+app.use("/", express.static(path.join(__dirname+"/public")));
+app.use("/bower_components", express.static(path.join(__dirname+"/bower_components")));
 
 app.use('*', function(req, res, next) {
      if (req.isAuthenticated()){
@@ -68,13 +68,12 @@ app.use('*', function(req, res, next) {
          return next();
      }
      else {
-         res.redirect('/');
+         //res.redirect('/');
      }
+     return next();
  });
 app.use('/user', user);
 app.use('/mentors', mentors);
-app.use('/template', template);
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

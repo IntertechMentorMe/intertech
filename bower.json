@@ -20,7 +20,8 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.3.5",
+    "bootstrap": "~4.0.0",
+    "components-bootstrap-default": "~3.3.5",
     "mootools": "~1.5.2"
   }
 }
