@@ -6,43 +6,43 @@
 
     <body>
 
-		{{>nav_mentee}}
+		{{>nav_mentor}}
 
-    <div class="container">
-			<div class="lead">Viewing {{firstName}}'s Profile:</div>
-      <div class="row">
-        <div class="col-md-3">
-          <img class="profile-image" src="{{photo}}" alt="User Profile">
-	      </div>
-	      <div class="col-md-9">
-          <h1>{{firstName}} {{lastName}}</h1>
-          <h2>{{headline}}</h2>
-          <p>
-              {{summary}}
-          </p>
-	      </div>
-		  </div>
+    <div class="container jumbo">
 
-      <div class="row">
-          <div class="col-md-12">
-              <form class="">
-                  <div class="form-group">
-                      <label class="sr-only" for="apply">Application</label>
-                      <textarea rows="10" cols="" class="form-control" id="apply" placeholder="Introduce yourself to {{firstName}}"></textarea>
-                  </div>
-                  <button type="submit" class="btn btn-default">Apply</button>
-              </form>
-          </div>
-      </div>
-
-      <div class="row">
+			{{#if saved}}
+			<div class="row">
           <div class="col-md-12">
               <div class="alert alert-success" role="alert">
-                  Congratulations, your application has been sent to {{firstName}}.
+                  Your profile has been updated.
               </div>
           </div>
       </div>
+
+			{{/if}}
+
+      <div class="row">
+        <div class="col-md-3">
+          <img class="profile-image img-responsive" src="{{user.photo}}" alt="User Profile">
+	      </div>
+	      <div class="col-md-9">
+					<form method="post">
+	          <h1>{{user.firstName}} {{user.lastName}}</h1>
+	          <h2>{{user.headline}}</h2>
+						<p>Email address: <input name="email" type="text" class="form-control" value="{{user.email}}"> (not shown to mentees unless you respond to their request)</p>
+						<p>Skills: <input name="skills" type="text" class="form-control" value="{{user.skills}}"></p>
+						<p>Experience: <input name="experience" type="text" class="form-control" value="{{user.experience}}"></p>
+						<p>
+							Summary: <br>
+								<textarea name="summary" rows="10" cols="" class="form-control">{{user.summary}}</textarea>
+						</p>
+						<button class="btn btn-default">Save</button>
+					</form>
+	      </div>
+		  </div>
     </div>
+
+		<div class="space"></div>
 
 		{{>footer}}
 

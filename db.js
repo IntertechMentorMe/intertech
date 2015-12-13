@@ -17,12 +17,14 @@ function getUserById(id) {
 }
 
 function updateUser(user) {
+  var id = user.id;
+
   var _user = JSON.parse(JSON.stringify(user));
   delete _user.id;
   var statement = squel.update({replaceSingleQuotes: true})
   .table('users')
   .setFields(_user)
-  .where('id', user.id)
+  .where('id=?', id)
   .toString()
 
   return db.query(statement);
