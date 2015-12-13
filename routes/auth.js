@@ -7,7 +7,7 @@ var LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
 passport.use(new LinkedInStrategy({
     clientID: "77xlox75336hph",
     clientSecret: "ZhS2IlMJ5YVS1OGk",
-    callbackURL: "http://127.0.0.1/auth/linkedin/callback",
+    callbackURL: "http://127.0.0.1:3000/auth/linkedin/callback",
     scope: ['r_emailaddress', 'r_basicprofile'],
     state: true,
     passReqToCallback: true
