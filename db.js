@@ -35,7 +35,6 @@ function insertUser(user) {
   .into('users')
   .setFields(user)
   .toString()
-  console.log("FOOOFY", statement);
 
   return db.query(statement);
 }

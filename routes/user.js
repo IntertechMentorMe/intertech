@@ -20,8 +20,6 @@ router.use('/', function(req, res) {
         isMentor: 1
       };
       db.Users.update(user).then(x => {
-        user.firstName = user.first_name;
-        user.lastName = user.last_name;
         res.render('user', {user: user, saved: true});
       });
       return;

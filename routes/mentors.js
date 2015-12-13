@@ -5,6 +5,17 @@ var db = require('../db.js');
 /* GET mentors page. */
 router.get('/', function(req, res) {
   db.Users.listMentors().then(mentors => {
+
+    var mentors_new = {};
+
+    mentors.forEach(function(mentor) {
+      mentors_new[mentor.first_name] = mentor;
+    });
+
+    mentors = Object.keys(mentors_new).map(function(key) {
+      return mentors_new[key];
+    });
+
     res.render("mentors", {mentors: mentors});
   });
 });
@@ -18,6 +29,8 @@ router.use('/:user/:name', function(req, res) {
           lastName: function() { return passport.last_name; },
           headline: function() { return passport.headline; },
           summary: function() { return passport.summary; },
+          skills: function() { return passport.skills; },
+          experience: function() { return passport.experience; },
           photo: function() { return passport.photo; }
         }
       });
