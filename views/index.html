@@ -50,14 +50,78 @@
         <div class="TCmodal">
           <h1>Terms and Conditions:</h1>
           <div class="TCinfo">
-            <ul>
-              <li>Don't do anything dodgy</li>
-              <li>If you do, it's not our fault</li>
-            </ul>
+            <div class="TCmentee">
+              {{#if mentee}}
+                <p>To get the most from your Mentoring relationship you should consider the following:</p>
+                <ul>
+                  <li>Are the issues that I’m looking to address based within a professional and/ or industry context?</li>
+                  <li>I’m not looking for inter-personal support or to address issues that are affecting my emotional or mental health</li>
+                  <li>Can I commit to the time and effort involved?</li>
+                  <li>Am I clear on what is it I want to achieve from the Mentoring, and can I effectively communicate this?</li>
+                  <li>We are an LGBT+ community, and you are comfortable with this.</li>
+                </ul>
+              {{/if}}
+            </div>
+            <div class="TCmentor">
+              {{#if mentor}}
+                <p>We will ask for volunteers from the InterTech membership, who should carefully consider whether their skills and experiences qualify them to take on a Mentoring role. Although all volunteers who apply will be considered on merit the following skills and experiences are sought: Required:</p>
+                <ul>
+                  <li>Impressive career history within the Technology or related sectors</li>
+                  <li>Educated to H.E. level or holding equivalent professional qualifications</li>
+                  <li>Experienced in the development of people</li>
+                  <li>Able to commit a minimum of two hours per month</li>
+                  <li>Committed to operating within the EMCC code of ethics</li>
+                </ul>
+
+                <p>Previous Coaching Mentoring experience is highly valued</p>
+
+                <p>The decision to accept a volunteer Mentor on to the programme will be made by the InterTech Mentoring Leadership Team (LT) and the decision will be final. The InterTech LT will review the volunteer Mentor list twice yearly and reserve the right to terminate an individual’s participation in the programme.</p>
+
+                <p>Both Mentor and Mentee agree to take personal responsibility for their Mentoring relationship and InterTech will not be held liable for any disputes arising from within a Mentoring relationship.</p>
+
+                <p>Each Mentor will be asked to provide a profile which will appear on the secure Mentoring website along with those of the other Mentors.</p>
+
+                <p>Any member of the InterTech membership will be able to apply for the programme. They will be asked to provide an overview (around 300 words) of why they would like to enter in to a Mentoring relationship. These applications will be considered by the InterTech Mentoring LT once a quarter.</p>
+
+                <p>It is then the Mentor’s decision on whether to accept the request. If the Mentor decides not to accept the application they are not obliged to give any reasons.</p>
+
+                <p>We then advise that the both parties hold an introductory meeting during which they can:</p>
+
+                <ul>
+                  <li>Review the application</li>
+                  <li>Check whether the interpersonal match is right</li>
+                  <li>Agree on a set of goals; when and how to meet; and any other relevant</li>
+                </ul>
+
+                <p>Mentoring relationships very often last six months, and feature six one hour meetings. However, there are no set rules and both parties are free to decide upon the regularity and length.</p>
+
+                <p>Being a Mentor</p>
+
+                <p>Mentoring can be highly rewarding, especially when you see your mentee develop and reach their goals. However it’s an undertaking that requires a particular set of skills and experiences and shouldn’t be taken without some forethought.</p>
+
+                <p>Many of the best Mentors have considered the following points -
+
+                <ul>
+                  <li>Why am I doing this? What are your motivations?</li>
+                  <li>Have I ‘served enough time’? Do you have enough professional experience to provide a variety of insights that may help you explain your point?</li>
+                  <li>How’s my EQ? Are you recognised for your high levels of emotional intelligence and objectivity?</li>
+                  <li>Can I be impartial? Can you separate your views from those of others?</li>
+                  <li>Have I got the time? For each hour of contact time with your mentee you should be able to set aside preparation and review time.</li>
+                </ul>
+
+                <p>In addition you should formerly write down what occurs in each session, these form the contents of your Mentoring Log. This can be used to review progress, record your reflections on the session and what is planned for the next session. In the unlikely event that a dispute arises your mentoring log will provide you with a record of what occurred in each session. Please see a suggested format in the appendix.</p>
+
+                <p>If you decide that you would like to volunteer your time and services to our Mentoring programme you will be asked to put together a profile that will appear on our secure Mentoring site. Your profile will appear along with other Mentors’ profiles for Mentees to peruse. If they think that your skills, experiences and approach to Mentoring are a good match they will send you an application for your review, and you can decide whether or not to contact them for an exploratory meeting.</p>
+
+                <p>Mentor Profile: Your profile should give Mentees an overview of your skills and experiences and how they equip you to give guidance or assist a mentee with their professional development or other issues they may want help with. You should give an overview of your career to date, any areas that you are particularly skilled or interested in, and an overview of your style and approach. Please avoid sharing details that may cause a conflict of interest or a breach of confidentiality.</p>
+
+                <p>When reviewing a potential Mentee’s application consider the following: Are my experiences and skills relevant for this particular Mentee’s requirements? i.e. have I worked in this area? Do I have the particular skills and expertise? How does my life/ career profile match the requirement? Do I have enough distance from the situation so as not to invite conflict of interest or a breach of confidentiality?</p>
+              {{/if}}
+            </div>
           </div>
           <div class="text-right">
-            <a href="/" class="disagree-button"><button type="button" class="btn btn-link">I object</button></a>
-            <a href="/{{end}}" class="agree-button"><button type="button" class="btn btn-default">I agree</button></a>
+            <a href="/" class="disagree-button"><button type="button" class="btn btn-link">Go Back</button></a>
+            <a href="/{{end}}" class="agree-button"><button type="button" class="btn btn-default">I Agree</button></a>
           </div>
         </div>
       </div>
