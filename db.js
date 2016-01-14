@@ -13,7 +13,7 @@ db.configure({
 //Returns a user or undefined if no such user exists
 function getUserById(id) {
   return db.query("SELECT * FROM users WHERE id = ? LIMIT 1", id)
-  .then(users => users[0][0]);
+  .then(function(users) {users[0][0]});
 }
 
 function updateUser(user) {
@@ -46,7 +46,7 @@ function listMentors() {
   .toString()
 
   return db.query(statement)
-  .then(mentors => mentors[0]);
+  .then(function(mentors) {mentors[0]});
 }
 
 function createUsers() {
