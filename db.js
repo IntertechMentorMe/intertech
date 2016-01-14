@@ -31,11 +31,15 @@ function updateUser(user) {
 }
 
 function insertUser(user) {
-  var statement = squel.insert()
-  .into('users')
-  .setFields(user)
-  .toString()
-
+  try {
+    var statement = squel.insert()
+    .into('users')
+    .setFields(user)
+    .toString()
+  } catch(e) {
+    updateUser(user);
+  }
+  }
   return db.query(statement);
 }
 
