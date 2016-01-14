@@ -4,7 +4,7 @@ var db = require('../db.js');
 
 /* GET mentors page. */
 router.get('/', function(req, res) {
-  db.Users.listMentors().then(mentors => {
+  db.Users.listMentors().then(function(mentors) {
 
     var mentors_new = {};
 
@@ -21,7 +21,7 @@ router.get('/', function(req, res) {
 });
 
 router.use('/:user/:name', function(req, res) {
-  db.Users.getById(req.params.user).then(passport => {
+  db.Users.getById(req.params.user).then(function(passport) {
     res.render('profile', {
         sent: req.method != "GET",
         helpers: {
