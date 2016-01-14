@@ -9,7 +9,7 @@ var url = process.env.host || "127.0.0.1:3000";
 passport.use(new LinkedInStrategy({
     clientID: "776y20hol6ps97",
     clientSecret: "1Mqrz8nWqp5hU3y7",
-    callbackURL: "http://127.0.0.1:3000/auth/linkedin/callback",
+    callbackURL: "http://" + url + "/auth/linkedin/callback",
     scope: ['r_emailaddress', 'r_basicprofile'],
     state: true,
     passReqToCallback: true
@@ -56,11 +56,6 @@ passport.deserializeUser(function(user, done) {
 });
 
 router.get('/login',
-    function(req, res){
-        // The request will be redirected to LinkedIn for authentication, so this
-        // function will not be called.
-        url = req.host;
-    }
     passport.authenticate('linkedin'));
 
 router.get('/linkedin/callback', passport.authenticate('linkedin', {
