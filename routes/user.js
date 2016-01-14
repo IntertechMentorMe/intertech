@@ -19,13 +19,13 @@ router.use('/', function(req, res) {
         email: req.body.email,
         isMentor: 1
       };
-      db.Users.update(user).then(x => {
+      db.Users.update(user).then(function(x) {
         res.render('user', {user: user, saved: true});
       });
       return;
     }
 
-    db.Users.getById(passport.id).then(passport => {
+    db.Users.getById(passport.id).then(function(passport) {
 
       if (!passport.isMentor) {
         res.redirect("/mentors");
