@@ -39,7 +39,7 @@ function insertUser(user) {
   } catch(e) {
     updateUser(user);
   }
-  }
+  
   return db.query(statement);
 }
 
