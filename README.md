@@ -43,7 +43,7 @@ To download `node` on windows go to https://nodejs.org/en/download/ and follow t
 
 You'll need to open a command prompt (sometimes called terminal or command line) in order to download the source code. Find a folder you want to download the code to, right click on the folder whilst holding down the shift key and select `Open Command Window here`. This should open a black window, from there type:
 
-    git clone https://github.com/pauljohnfisher/intertech.git
+    git clone https://github.com:IntertechMentorMe/intertech.git
     cd intertech
     npm install -g bower
     bower install
@@ -57,7 +57,7 @@ To download all the packages on Ubuntu and download the source code to a folder 
 
     sudo apt-get install git nodejs-legacy npm
     cd ~/Desktop
-    git clone https://github.com/pauljohnfisher/intertech.git
+    git clone https://github.com:IntertechMentorMe/intertech.git
     cd intertech
     sudo npm install -g bower
     bower install
@@ -79,7 +79,7 @@ Open a terminal window (avaliable on all Macs, pressed command + space and use s
     brew install node
     brew install git
     cd ~/Desktop
-    git clone https://github.com/pauljohnfisher/intertech.git
+    git clone https://github.com:IntertechMentorMe/intertech.git
     cd intertech
     sudo npm install -g bower
     bower install
@@ -125,7 +125,7 @@ From the command line / command prompt / terminal type:
 
 You can use ctrl+C to stop the local web server at any time. It's a good idea to stop the web server before updating any resources.
 
-You should be up to date now and can view the website locally at http://localhost:3000/
+You should be up to date now and can view the website locally at http://127.0.0.1:3000/
 
 Adding Bower / Node Components
 ------------------------------
