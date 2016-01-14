@@ -63,12 +63,12 @@ app.use("/", express.static(path.join(__dirname+"/public")));
 app.use("/bower_components", express.static(path.join(__dirname+"/bower_components")));
 
 app.use('*', function(req, res, next) {
-     if (req.isAuthenticated()){
+     if (req.session.passport){
          // console.log(req.session)
          return next();
      }
      else {
-         //res.redirect('/');
+         res.redirect('/');
      }
      return next();
  });

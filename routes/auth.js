@@ -46,6 +46,18 @@ function fixedEncodeURIComponent (str) {
     }
 }
 
+passport.serializeUser(function(user, done) {
+    done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+  done(null, user);
+    return db.Users.getById(user.id)
+    .then(function(user) {
+        done(null, user)
+    });
+});
+
 router.get('/login',
     passport.authenticate('linkedin'));
 

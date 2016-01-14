@@ -13,7 +13,7 @@ db.configure({
 //Returns a user or undefined if no such user exists
 function getUserById(id) {
   return db.query("SELECT * FROM users WHERE id = ? LIMIT 1", id)
-  .then(function(users) {users[0][0]});
+  .then(function(users) {return users[0][0]});
 }
 
 function updateUser(user) {
@@ -31,15 +31,15 @@ function updateUser(user) {
 }
 
 function insertUser(user) {
-  
+
   var statement = squel.insert()
   .into('users')
   .setFields(user)
   .toString();
-  
+
   return db.query(statement)
   .then(null, function() {
-    updateUser(user);
+    return updateUser(user);
   });
 }
 
@@ -50,7 +50,7 @@ function listMentors() {
   .toString()
 
   return db.query(statement)
-  .then(function(mentors) {mentors[0]});
+  .then(function(mentors) {return mentors[0]});
 }
 
 function createUsers() {
