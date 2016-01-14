@@ -35,12 +35,12 @@ function insertUser(user) {
   var statement = squel.insert()
   .into('users')
   .setFields(user)
-  .toString()
+  .toString();
+  
+  return db.query(statement)
   .then(null, function() {
     updateUser(user);
   });
-  
-  return db.query(statement);
 }
 
 function listMentors() {
