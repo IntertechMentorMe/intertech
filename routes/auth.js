@@ -27,11 +27,11 @@ passport.use(new LinkedInStrategy({
 
     //TODO: Store the access token and refresh token
     return db.Users.getById(profile._json.id)
-    .then(profile => {
+    .then(function(profile) {
         if (!profile) return db.Users.insert(user);
         else db.Users.update(user);
     })
-    .then(() => done(null, user))
+    .then(function() {done(null, user)});
 }));
 
 function fixedEncodeURIComponent (str) {
@@ -50,7 +50,7 @@ passport.serializeUser(function(user, done) {
 
 passport.deserializeUser(function(user, done) {
     return db.Users.getById(user.id)
-    .then(user => done(null, user))
+    .then(function(user) {done(null, user)})
 });
 
 router.get('/login',
