@@ -53,11 +53,8 @@ passport.serializeUser(function(user, done) {
 passport.deserializeUser(function(user, done) {
     return db.Users.getById(user.id)
     .then(function(user) {
-        try {
-            done(null, user)
-        } catch(e) {
-            done(null, false)
-        }
+        done(null, false)
+        done(null, user)
     });
 });
 
